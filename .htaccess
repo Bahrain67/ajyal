@@ -1,11 +1,1 @@
-# منع الوصول المباشر إلى الملفات الحساسة
-<FilesMatch "^(config|actions|utils)/.*\.(php)$">
-    Order Allow,Deny
-    Deny from all
-</FilesMatch>
 
-# إعادة التوجيه إلى index.php
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php [QSA,L]
